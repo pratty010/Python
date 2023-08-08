@@ -219,9 +219,9 @@ def dict_oper(mydict):
 
     test_dict.clear()
     print("{} after clear dict-> {}".format(test_dict_1, test_dict))
-    
 
-    
+
+
 # main function
 def main():
     # var assignment
@@ -234,12 +234,12 @@ def main():
         "model": "Mustang",
         "year": 1964
         }
-
+    
     # funtions invoke
     list_opr(mylist)
     tuple_opr(mytuple)
     set_oper(myset)
-    dict_oper(mydict)
+    dict_oper(mydict)    
     
     
 if __name__ == '__main__':

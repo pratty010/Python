@@ -42,8 +42,27 @@ class Player2:
             self.height = height
             self.height -= 10
         # return self.height
+
+# Child Class to inherit the Player2 class        
+class AcadPlayer(Player2):
+    
+    # Parameterized constructor to inherit the Parent Class - Player2
+    def __init__(self, name, club, height, academy) -> None:
+        super().__init__(name, club, height) # Super keyword to inherit the methods and properties from parent class
         
-        
+        # adding additonal child class properties
+        self.academy = academy
+    
+    
+    # default method for string print calls.
+    def __str__(self) -> str:
+        # str function local to this class
+        # return ("Name: {}, Club : {}, Height: {}, Academy: {}".format(self.name, self.club, self.height, self.academy))
+
+        # overwriting the parent class funtion to add more properties
+        text = super().__str__()
+        text += ", Academy : {}".format(self.academy)
+        return text
         
     
 def main():
@@ -67,6 +86,18 @@ def main():
     # deleting objs to free space
     del player1
     del player2
+    
+    
+    # defining an object for an inherited class
+    acadplayer= AcadPlayer("Pratty", "Chelsea", 123, "Real Madrid")
+    print(acadplayer)
+    
+    # calling an inherited funtion
+    acadplayer.height_increase(100)
+    print(acadplayer)
+    
+    # deleting obj to free space
+    del acadplayer
      
 if __name__ == '__main__':
     main()
